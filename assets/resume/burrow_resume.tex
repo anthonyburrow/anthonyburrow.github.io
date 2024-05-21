@@ -1,0 +1,446 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{xifthen}
+% \usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{natbib}
+\usepackage{bibentry}
+\bibliographystyle{apalike}
+
+
+\usepackage{my_macros}
+
+\definecolor{xlinkcolor}{cmyk}{1,1,0,0}
+\usepackage[
+  colorlinks=true,
+  linkcolor=xlinkcolor,
+  citecolor=xlinkcolor,
+  filecolor=xlinkcolor,
+  urlcolor=xlinkcolor,
+]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newlength{\mylen}
+\setbox1=\hbox{$\bullet$}\setbox2=\hbox{\tiny$\bullet$}
+\setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
+\renewcommand\labelitemi{\raisebox{\mylen}{\small$\bullet$}}
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\smallHeading}[1]{\small{\textbf{#1}:\vspace{-5pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\paperEntry}[5]{
+  \item #1, ..., \textbf{Burrow, Anthony}, et al. (#2). \textit{#3}. {#4}
+  \ifthenelse{\isempty{#5}}{}{, doi: \href{https://doi.org/#5}{#5}}
+}
+
+\newcommand{\paperEntryFirstAuthor}[5]{
+  \item \textbf{Burrow, Anthony}, #1, et al. (#2). \textit{#3}. #4
+  \ifthenelse{\isempty{#5}}{}{, doi: \href{https://doi.org/#5}{#5}}
+}
+
+\newcommand{\educationEntry}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1}; \textit{GPA: #2}  & #3 \\
+      \textit{\small#4} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\emphasize}[1]{\textbf{#1}}
+
+% -------------------------------------------
+
+\begin{document}
+
+\nobibliography{mybib}
+
+
+% Header
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
+  \multirow{3}{*}{\textbf{\huge Anthony Burrow}}
+  & \faEnvelope \enspace anthony.r.burrow@gmail.com \\
+  & \faGithub \enspace \href{http://www.github.com/anthonyburrow}{github.com/anthonyburrow} \\
+  & \faLinkedin \enspace \href{https://www.linkedin.com/in/anthony-burrow}{linkedin.com/in/anthony-burrow} \\
+\end{tabular*}
+
+
+\section{Education}
+\resumeSubHeadingListStart
+
+  \educationEntry
+    {Ph.D. in Physics}{3.92}{Aug. 2019 -- Present (Expected Summer 2024)}
+    {University of Oklahoma}{Norman, OK}
+  \educationEntry
+    {B.S. in Astrophysics}{3.91}{Aug. 2014 -- May. 2017}
+    {University of Oklahoma}{Norman, OK}
+
+\resumeSubHeadingListEnd
+
+
+\section{Technical Skills}
+
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
+    \vspace{3pt}
+    \textbf{Programming} & \textbf{Platforms} & \textbf{Technologies} \\
+    Python, C/C++, C\#, SQL, Bash, & Linux/UNIX, Windows & Git (Version Control), \LaTeX, RStudio, \\
+    Fortran, IDL, Make/Makefiles, CMake & & Microsoft Office, Mathematica, IRAF \\
+    \vspace{-3pt}
+  \end{tabular*}
+
+  \vspace{-3pt}
+  \textbf{Experience with Python Libraries}
+
+  \vspace{1pt}
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
+    % \vspace{3pt}
+    NumPy & SciPy & scikit-learn & Astropy & Tensorflow & pandas \\
+    matplotlib & Jupyter & Cython & pybind11 & GPy & george \\
+    % \vspace{-3pt}
+  \end{tabular*}
+
+  \vspace{6pt}
+  \textbf{Strengths}
+  \vspace{1pt}
+
+  Data Analysis \hfill$\circ$\hfill
+  Data Visualization \hfill$\circ$\hfill
+  Cluster Analysis \hfill$\circ$\hfill
+  Classification \hfill$\circ$\hfill
+  Hierarchical Bayesian Modeling \\
+  Statistics \hfill$\circ$\hfill
+  Machine Learning \hfill$\circ$\hfill
+  Interpolation \& Extrapolation \hfill$\circ$\hfill
+  Numerical Computation \\
+  Software Development \hfill$\circ$\hfill
+  Unit Testing \hfill$\circ$\hfill
+  Debugging \hfill$\circ$\hfill
+  Scripting \hfill$\circ$\hfill
+  Automation \hfill$\circ$\hfill
+  Optimization
+
+
+\section{Research Experience}
+\resumeSubHeadingListStart
+
+  \normalsize
+  \resumeSubheading
+    {Graduate Research Assistant}{July 2019 -- Present}
+    {University of Oklahoma, Advised by Dr. Eddie Baron}{Norman, OK}
+
+    \vspace{5pt}
+    \hspace*{0.85em}
+    \begin{minipage}{0.95\textwidth}
+    My research focuses on a statistical treatment of observations of Type Ia
+    supernovae (SNe~Ia). As a result, I identified correlations between many
+    spectroscopic and photometric properties of these supernovae, which will
+    lead to the enhancement of supernova models all around the scientific
+    community.
+    \end{minipage}
+    \begin{itemize}\small
+      \item \emphasize{Develop Python software} to implement several
+        \emphasize{machine-learning} techniques to \emphasize{model} the
+        behavior of SNe~Ia.
+      \item \emphasize{Statistically analyze data}, resulting in two
+        first-author \emphasize{publications} and a dissertation that
+        illustrate the effectiveness of my results in performing
+        \emphasize{classifications} and \emphasize{predictions}.
+      \item Work in conjunction with the Precision Observations of Infant
+        Supernova Explosions (POISE), a larger \emphasize{collaboration}
+        between several other universities and facilities around the world.
+      \item Utilize the \texttt{PHOENIX} radiative transfer code in a
+        \emphasize{supercomputing} environment with \emphasize{Slurm} workload
+        management scripts to generate synthetic spectrum \emphasize{models} to
+        better understand the diversity of SNe~Ia.
+    \end{itemize}
+    \hspace*{1.1em}\smallHeading{Products}
+    \begin{itemize}\small
+      \item \href{https://github.com/anthonyburrow/SNEx}{SNEx} (Python):
+        Spectrum \emphasize{extrapolation} into the near-infrared using PCA
+        \citep{Burrow_etal_2024}.
+      \item \href{https://github.com/anthonyburrow/spextractor}{Spextractor} (Python):
+        \emphasize{Fast spectrum-smoothing} using Gaussian processes; spectrum
+        \emphasize{preprocessing}; other useful features.
+      \item \href{https://github.com/anthonyburrow/SNIaDCA}{SNIaDCA} (Python):
+        Wrapper for \emphasize{classifying} SNe~Ia with Gaussian mixture models
+        \citep{Burrow_etal_2020}.
+    \end{itemize}\vspace{-5pt}
+
+  \normalsize
+  \resumeSubheading
+    {Undergraduate Research Assistant}{June 2015 -- May 2017}
+    {University of Oklahoma, Advised by Dr. John Wisniewski}{Norman, OK}
+
+    \vspace{5pt}
+    \hspace*{0.85em}
+    \begin{minipage}{0.95\textwidth}
+    My work concentrated on the observation, reduction, and analysis of
+    data taken of star clusters to improve our understanding of stars with
+    variable circumstellar disks.
+    \end{minipage}
+    \begin{itemize}\small
+      \item \emphasize{Reduce} observed data by removing multiple sources of
+        noise from raw \texttt{FITS} images of star clusters using
+        \texttt{IRAF}.
+      \item \emphasize{Model} the light profile of stars on images to calculate
+        their PSF photometry using \texttt{IRAF}.
+      \item Create Python and IDL scripts needed to \emphasize{analyze data}
+        and propagate errors derived from observations.
+      \item Conduct multiple remote \emphasize{observations} using a 0.5m
+        telescope at the Apache Point Observatory
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+
+\section{Additional Projects}
+\resumeSubHeadingListStart
+
+  \item \href{https://github.com/anthonyburrow/Rad1D}{Rad1D}:
+    A 1D radiative transfer code written in C++ featuring a Python wrapper for
+    easy implementation into Python for analysis and plotting. This program
+    converges a solution to wavelength-dependent radiative transfer equations,
+    which describes how light behaves as it passes through a medium as a
+    function of optical depth.
+  \item \href{https://github.com/anthonyburrow/Hydro1D}{Hydro1D}:
+    A 1D hydrodynamical code written primarily in C++ with some Python
+    additions. This program models the fluid dynamics of a massive (10
+    M$_\odot$) star undergoing a collapse and a shock event, which leads to a
+    core-collapse supernova.
+
+\resumeSubHeadingListEnd
+
+
+\section{Publications}
+
+  \smallHeading{First-Authored Papers}
+
+  \resumeItemListStart
+    % \item Burrow et al. (\textit{ApJ, in press})
+    % \item \bibentry{Burrow_etal_2020}
+    \paperEntryFirstAuthor{Baron, E., Burns, Christopher R.}{2024}
+      {Extrapolation of Type Ia Supernova Spectra into the Near-Infrared Using PCA}
+      {arXiv e-prints}{10.48550/arXiv.2404.04724}
+    \paperEntryFirstAuthor{Baron, E., Ashall, C.}{2020}
+      {Carnegie Supernova Project: Classification of Type Ia Supernovae}
+      {\apj}{10.3847/1538-4357/abafa2}
+  \resumeItemListEnd
+
+  \smallHeading{Relevant Co-Authored Papers}
+
+  \resumeItemListStart
+    % \paperEntry{Shahbandeh, Melissa}{2024}
+    %            {Unraveling cosmic dust origins: JWST revelations from legacy observations of SN 2023dbc}
+    %            {JWST Proposal. Cycle 3, ID. \#6213}{}
+    % \paperEntry{Shahbandeh, Melissa}{2024}
+    %            {Probing Early Dust Formation in the Universe via Stripped-Envelope Supernovae}
+    %            {JWST Proposal. Cycle 3, ID. \#6583}{}
+    % \paperEntry{DerKacy, James M.}{2024}
+    %            {Examining the Heart of Type Ia Supernova 2021aefx with Ultra-Late Time Spectra}
+    %            {JWST Proposal. Cycle 3, ID. \#6582}{}
+    % \paperEntry{DerKacy, James M.}{2024}
+    %            {The Full Picture: Determining the Ultra-Late Time MIR Flux Redistribution in SN 2021aefx}
+    %            {JWST Proposal. Cycle 3, ID. \#6023}{}
+    % \paperEntry{Ashall, Chris}{2024}
+    %            {Late Time Spectroscopy of Type Ia Supernovae: Determining the Explosion Mechanism and Elemental Production}
+    %            {JWST Proposal. Cycle 3, ID. \#5057}{}
+    \paperEntry{DerKacy, James M.}{2024}
+               {JWST MIRI/Medium Resolution Spectrograph (MRS) Observations and Spectral Models of the Underluminous Type Ia Supernova 2022xkq}
+               {\apj}{10.3847/1538-4357/ad0b7b}
+    \paperEntry{Shahbandeh, Melissa}{2024}
+               {JWST NIRSpec+MIRI Observations of the nearby Type IIP supernova 2022acko}
+               {arXiv e-prints}{10.48550/arXiv.2401.14474}
+    % \paperEntry{DerKacy, James M.}{2023}
+    %            {The UV Future is Now: Tapping Hubble's UV Spectral Archive to Drive Current and Future Type Ia Supernova Science}
+    %            {HST Proposal. Cycle 31, ID. \#17555}{}
+    % \paperEntry{Shahbandeh, Melissa}{2023}
+    %            {Near- and Mid-IR Observations to Probe Dust Formation in the Remarkably Nearby Stripped-Envelope Supernova 2023dbc}
+    %            {JWST Proposal. Cycle 2, ID. \#4520}{}
+    % \paperEntry{Shahbandeh, Melissa}{2023}
+    %            {Probing Early Dust Formation in the Universe via Stripped-Envelope Supernovae}
+    %            {JWST Proposal. Cycle 2, ID. \#4217}{}
+    % \paperEntry{DerKacy, James M.}{2023}
+    %            {Examining the Heart of Type Ia Supernova 2021aefx with Ultra-Late Time Spectra}
+    %            {JWST Proposal. Cycle 2, ID. \#3726}{}
+    \paperEntry{Yarbrough, Zach}{2023}
+               {Direct analysis of the broad-line SN 2019ein: connection with the core-normal SN 2011fe}
+               {\mnras}{10.1093/mnras/stad758}
+    % \paperEntry{Shahbandeh, Melissa}{2023}
+    %            {Near- and Mid-IR Observations to Probe Dust Formation in the Remarkably Nearby Stripped-Envelope Supernova 2023dbc}
+    %            {JWST Proposal. Cycle 1, ID. \#4436}{}
+    \paperEntry{DerKacy, J. M.}{2023}
+               {JWST Low-resolution MIRI Spectral Observations of SN 2021aefx: High-density Burning in a Type Ia Supernova}
+               {\apj}{10.3847/2041-8213/acb8a8}
+    % \paperEntry{Lu, J.}{2022}
+    %            {POISE Transient Classification Report for 2022-03-18}
+    %            {Transient Name Server Classification Report}{}
+    % \paperEntry{Ashall, Chris}{2021}
+    %            {MIR Spectroscopy of Type Ia Supernovae: The Key to Unlocking their Explosions and Element Production}
+    %            {JWST Proposal. Cycle 1, ID. \#2114}{}
+    \paperEntry{Burns, C.}{2021}
+               {Introducing POISE: Precision Observations of Infant Supernova Explosions}
+               {\atel}{}
+  \resumeItemListEnd
+
+
+\section{Technical Presentations}
+\resumeSubHeadingListStart
+
+  \resumeItem{POISE Collaboration Meeting, August 2023}
+    {\textit{Extrapolation of Type Ia Spectra into the Near-Infrared Using
+     PCA}; a final discussion leading to \cite{Burrow_etal_2024}.}
+  \resumeItem{POISE Collaboration Meeting, July 2022}
+    {\textit{Extrapolation of Type Ia Spectra into the Near-Infrared Using
+     PCA}; the beginning of the project leading to \cite{Burrow_etal_2024}.}
+  \resumeItem{CSP Collaboration Workshop, September 2020}
+    {\textit{Carnegie Supernova Project: Classification of Type Ia
+     Supernovae}; a presentation of the publication by
+     \cite{Burrow_etal_2020}.}
+  \resumeItem{American Astronomical Society Winter Conference, January 2017}
+    {Poster presentation highlighting my undergraduate research.}
+  \resumeItem{OU REU Program, Summer 2015}
+    {Several presentations describing the results of my undergraduate
+    research during this program.}
+
+\resumeSubHeadingListEnd
+
+
+\section{Teaching Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Graduate Teaching Assistant}{Aug. 2019 -- Dec. 2021}
+    {University of Oklahoma}{Norman, OK}
+
+    \begin{itemize}
+    \item Provide lectures and guide group discussions on topics in-class to
+      undergraduate students in Introductory Astronomy and Physics courses.
+    \item Lead students with hands-on operation of telescopes during
+      astronomy labs.
+    \item Grading and evalution for higher-level undergraduate astronomy
+      ourses, such as Galaxies \& Cosmology and Stellar Astrophysics.
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+
+\pagebreak
+
+
+\section{Relevant Coursework}
+\resumeSubHeadingListStart
+
+  \resumeItem{Machine Learning}
+    {(See \href{https://github.com/anthonyburrow/MachineLearning}{repository}.)}
+
+    Discusses advanced statistical techniques and machine learning concepts such as:
+
+    \vspace{-10pt}
+    \begin{multicols}{3}
+    \begin{itemize}[nolistsep]
+        \item Regression Analysis
+        \item Gaussian Processes
+        \item Cluster Analysis
+        \item Probabilistic Classification
+        \item Kernel Density Estimation
+        \item Neural Networks
+    \end{itemize}
+    \end{multicols}
+    \vspace{-12pt}
+
+  \resumeItem{Numerical Methods}
+    {(See \href{https://github.com/anthonyburrow/NumericalMethods}{repository}.)}
+
+    Discusses the most common problems that arise in computation and methods
+    to address them, such as root-solving, solving systems of equations, and
+    numerically solving ordinary and partial differential equations. This
+    course also provides an introduction to high-performance computing,
+    describing the architecture of modern supercomputing and giving practice
+    with parallelization of computation using interfaces such as MPI and
+    OpenMP.
+
+  \resumeItem{Stellar Atmospheres}{}
+
+    Largely focuses on understanding the physics of light propagating
+    through a medium by solving mathematically complex systems of equations
+    that describe radiative transfer, which are only solvable numerically in
+    application. This is a fundamental approach to understanding and modeling
+    spectra observed from astronomical objects.
+
+  \resumeItem{Core \& Advanced Physics Courses}{}
+
+    An assortment of courses that allow for the fundamental understanding of
+    physics at the post-graduate level, including Classical Mechanics,
+    Statistical Mechanics, Quantum Mechanics, and Electrodynamics, and
+    classes covering advanced topics in physics, including Quantum Mechanics
+    of Atoms and General Relativity.
+
+\resumeSubHeadingListEnd
+
+
+
+% TODO:
+% - Link to dissertation
+% - clean up readmes that are linked
+% - update linkedin
+% - awards section
+% - Lunar sooners?
+
+
+\end{document}
