@@ -20,7 +20,8 @@ refactor: true
 <div class="contact row px-1">
     <div class="col-md-1">
         {% assign src = contact.email.img %}
-        <img src="{{ src }}" width="30px" class="contact-img">
+        {% assign alt = contact.email.alt_img | xml_escape | default: 'Preview Image' %}
+        <img src="{{ src }}" alt="{{ alt }}" width="30px" class="contact-img">
     </div>
     <div class="col-md-6">
         {{ contact.email.address }}
@@ -32,7 +33,8 @@ refactor: true
     <div class="col-md-1">
         <a href="{{ contact.linkedin.url }}">
             {% assign src = contact.linkedin.img %}
-            <img src="{{ src }}" width="30px" class="contact-img">
+            {% assign alt = contact.linkedin.alt_img | xml_escape | default: 'Preview Image' %}
+            <img src="{{ src }}" alt="{{ alt }}" width="30px" class="contact-img">
         </a>
     </div>
     <div class="col-md-6">
@@ -47,7 +49,8 @@ refactor: true
     <div class="col-md-1">
         <a href="{{ contact.github.url }}">
             {% assign src = contact.github.img %}
-            <img src="{{ src }}" width="30px" class="contact-img">
+            {% assign alt = contact.github.alt_img | xml_escape | default: 'Preview Image' %}
+            <img src="{{ src }}" alt="{{ alt }}" width="30px" class="contact-img">
         </a>
     </div>
     <div class="col-md-6">
