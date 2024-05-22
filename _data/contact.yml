@@ -3,11 +3,16 @@ name: Anthony Burrow
 email:
   icon: "fas fa-envelope"
   address: anthony.r.burrow@gmail.com
+  img: assets/img/gmail.svg
 
 linkedin:
   icon: 'fab fa-linkedin'
   url:  https://www.linkedin.com/in/anthony-burrow
+  shorthand: linkedin.com/in/anthony-burrow
+  img: assets/img/linkedin.png
 
 github:
   icon: "fab fa-github"
   url: https://www.github.com/anthonyburrow
+  shorthand: github.com/anthonyburrow
+  img: assets/img/github.png

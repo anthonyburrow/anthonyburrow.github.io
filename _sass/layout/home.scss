@@ -89,6 +89,14 @@
   }
 } /* #post-list */
 
+.contact {
+  margin-top: 1.5rem;
+
+  .contact-img {
+    pointer-events: none;
+  }
+}
+
 .pagination {
   color: var(--text-color);
   font-family: Lato, sans-serif;

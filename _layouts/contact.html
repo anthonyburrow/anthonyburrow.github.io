@@ -1,0 +1,58 @@
+---
+layout: default
+refactor: true
+---
+
+{% include lang.html %}
+
+<article class="px-1">
+  <h1 class="dynamic-title">
+    Contact
+  </h1>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
+
+{% assign contact = site.data.contact %}
+
+<!-- Email -->
+<div class="contact row px-1">
+    <div class="col-md-1">
+        {% assign src = contact.email.img %}
+        <img src="{{ src }}" width="30px" class="contact-img">
+    </div>
+    <div class="col-md-6">
+        {{ contact.email.address }}
+    </div>
+</div>
+
+<!-- LinkedIn -->
+<div class="contact row px-1">
+    <div class="col-md-1">
+        <a href="{{ contact.linkedin.url }}">
+            {% assign src = contact.linkedin.img %}
+            <img src="{{ src }}" width="30px" class="contact-img">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{{ contact.linkedin.url }}">
+            {{ contact.linkedin.shorthand }}
+        </a>
+    </div>
+</div>
+
+<!-- GitHub -->
+<div class="contact row px-1">
+    <div class="col-md-1">
+        <a href="{{ contact.github.url }}">
+            {% assign src = contact.github.img %}
+            <img src="{{ src }}" width="30px" class="contact-img">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{{ contact.github.url }}">
+            {{ contact.github.shorthand }}
+        </a>
+    </div>
+</div>
