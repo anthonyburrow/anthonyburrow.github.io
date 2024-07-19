@@ -10,10 +10,10 @@ order: 4
 ---
 
 - <ins>Ph.D. in Physics</ins>
-  : University of Oklahoma, *Expected Summer 2024*
+  : University of Oklahoma, *July 2024*
 
 - <ins>B.S. in Astrophysics</ins>
-  : University of Oklahoma, *Spring 2017*
+  : University of Oklahoma, *May 2017*
 
 # Research Experience
 ---

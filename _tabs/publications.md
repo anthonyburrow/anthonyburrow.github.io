@@ -8,7 +8,7 @@ math: True
 # Dissertation
 ---
 
-My PhD dissertation is currently in preparation, but will eventually be available here.
+My PhD dissertation has been submitted to SHAREOK [here](https://shareok.org/handle/11244/340468){:target="_blank"}.
 
 # First-Author Papers
 ---
