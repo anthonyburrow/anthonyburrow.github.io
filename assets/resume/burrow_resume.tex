@@ -98,7 +98,7 @@
 \newcommand{\educationEntry}[5]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1}; \textit{GPA: #2}  & #3 \\
+      \textbf{#1}\ifthenelse{\isempty{#2}}{}{; GPA: #2}  & #3 \\
       \textit{\small#4} & \textit{\small #5} \\
     \end{tabular*}\vspace{-5pt}
 }
@@ -114,10 +114,11 @@
 
 % Header
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
-  \multirow{3}{*}{\textbf{\huge Anthony Burrow}}
+  \multirow{3}{*}{\textbf{\huge Anthony Burrow, Ph.D.}}
   & \faEnvelope \enspace anthony.r.burrow@gmail.com \\
-  & \faGithub \enspace \href{http://www.github.com/anthonyburrow}{github.com/anthonyburrow} \\
   & \faLinkedin \enspace \href{https://www.linkedin.com/in/anthony-burrow}{linkedin.com/in/anthony-burrow} \\
+  & \faHome \enspace \href{https://anthonyburrow.github.io}{anthonyburrow.github.io} \\
+  % & \faGithub \enspace \href{http://www.github.com/anthonyburrow}{github.com/anthonyburrow} \\
 \end{tabular*}
 
 
@@ -128,7 +129,10 @@
     {Ph.D. in Physics}{3.92}{Aug. 2019 -- July 2024}
     {University of Oklahoma; \href{https://shareok.org/handle/11244/340468}{Dissertation on SHAREOK}}{Norman, OK}
   \educationEntry
-    {B.S. in Astrophysics}{3.91}{Aug. 2014 -- May. 2017}
+    {Professional Certificate, Data Science}{}{July 2024 -- Present (\textit{Expected Aug. 2024})}
+    {IBM}{}
+  \educationEntry
+    {B.S. in Astrophysics}{3.91}{Aug. 2014 -- May 2017}
     {University of Oklahoma}{Norman, OK}
 
 \resumeSubHeadingListEnd
@@ -138,14 +142,14 @@
 
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
     \vspace{3pt}
-    \textbf{Programming} & \textbf{Platforms} & \textbf{Technologies} \\
+    \textbf{Programming}: & \textbf{Platforms}: & \textbf{Technologies}: \\
     Python, C/C++, C\#, SQL, Bash, & Linux/UNIX, Windows & Git (Version Control), \LaTeX, RStudio, \\
     Fortran, IDL, Make/Makefiles, CMake & & Microsoft Office, Mathematica, IRAF \\
     \vspace{-3pt}
   \end{tabular*}
 
   \vspace{-3pt}
-  \textbf{Experience with Python Libraries}
+  \textbf{Experience with Python Libraries}:
 
   \vspace{1pt}
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
@@ -156,24 +160,24 @@
   \end{tabular*}
 
   \vspace{6pt}
-  \textbf{Strengths}
+  \textbf{Data Science Skills}:
   \vspace{1pt}
 
+  Machine Learning \hfill$\circ$\hfill
   Data Analysis \hfill$\circ$\hfill
   Data Visualization \hfill$\circ$\hfill
   Cluster Analysis \hfill$\circ$\hfill
-  Classification \hfill$\circ$\hfill
-  Hierarchical Bayesian Modeling \\
+  Classification \\
   Statistics \hfill$\circ$\hfill
-  Machine Learning \hfill$\circ$\hfill
-  Interpolation \& Extrapolation \hfill$\circ$\hfill
-  Numerical Computation \\
+  Regression \hfill$\circ$\hfill
+  Predictive Modeling \hfill$\circ$\hfill
+  Optimization \hfill$\circ$\hfill
+  Interpolation \& Extrapolation \\
+  Numerical Computation \hfill$\circ$\hfill
   Software Development \hfill$\circ$\hfill
   Unit Testing \hfill$\circ$\hfill
   Debugging \hfill$\circ$\hfill
-  Scripting \hfill$\circ$\hfill
-  Automation \hfill$\circ$\hfill
-  Optimization
+  Automation
 
 
 \section{Research Experience}
@@ -197,17 +201,16 @@
       \item \emphasize{Develop Python software} to implement several
         \emphasize{machine-learning} techniques to \emphasize{model} the
         behavior of SNe~Ia.
-      \item \emphasize{Statistically analyze data}, resulting in two
-        first-author \emphasize{publications} and a dissertation that
-        illustrate the effectiveness of my results in performing
-        \emphasize{classifications} and \emphasize{predictions}.
-      \item Work in conjunction with the Precision Observations of Infant
-        Supernova Explosions (POISE), a larger \emphasize{collaboration}
-        between several other universities and facilities around the world.
-      \item Utilize the \texttt{PHOENIX} radiative transfer code in a
-        \emphasize{supercomputing} environment with \emphasize{Slurm} workload
-        management scripts to generate synthetic spectrum \emphasize{models} to
-        better understand the diversity of SNe~Ia.
+      \item Perform \emphasize{statistical analyses}, resulting in two
+        \emphasize{publications} that illustrate the effectiveness of my
+        results.
+      \item \emphasize{Collaborate} with leading researchers from several other
+        universities and facilities around the world (CSP, POISE).
+      \item \emphasize{Present} results to peers and collaborators at meetings
+        and conferences.
+      \item Synthesize \emphasize{models} in a \emphasize{supercomputing}
+        environment with \emphasize{Slurm} scripts using \texttt{PHOENIX}
+        radiative transfer code.
     \end{itemize}
     \hspace*{1.1em}\smallHeading{Products}
     \begin{itemize}\small
@@ -216,7 +219,7 @@
         \citep{Burrow_etal_2024}.
       \item \href{https://github.com/anthonyburrow/spextractor}{Spextractor} (Python):
         \emphasize{Fast spectrum-smoothing} using Gaussian processes; spectrum
-        \emphasize{preprocessing}; other useful features.
+        \emphasize{preprocessing}.
       \item \href{https://github.com/anthonyburrow/SNIaDCA}{SNIaDCA} (Python):
         Wrapper for \emphasize{classifying} SNe~Ia with Gaussian mixture models
         \citep{Burrow_etal_2020}.
