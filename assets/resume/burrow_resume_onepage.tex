@@ -100,12 +100,23 @@
   \textit{#3}. #4
 }
 
+% \newcommand{\educationEntry}[5]{
+%   \vspace{-1pt}\item
+%     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+%       \textbf{#1}\ifthenelse{\isempty{#2}}{}{; GPA: #2}  & #3 \\
+%       \textit{\small#4} & \textit{\small #5} \\
+%     \end{tabular*}\vspace{-5pt}
+% }
+
 \newcommand{\educationEntry}[5]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1}\ifthenelse{\isempty{#2}}{}{; GPA: #2}  & #3 \\
-      \textit{\small#4} & \textit{\small #5} \\
-    \end{tabular*}\vspace{-5pt}
+  \vspace{-1pt}
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l}
+      \textbf{#1}\ifthenelse{\isempty{#4}}{}{ (#4)} \\
+      #3, \textit{\small#2}
+      \ifthenelse{\isempty{#5}}{}{\\ #5 \\}
+    \end{tabular*}
+  \vspace{-5pt}
 }
 
 \newcommand{\emphasize}[1]{\textbf{#1}}
@@ -127,20 +138,46 @@
 \end{tabular*}
 
 
+\vspace{10pt}
+\begin{minipage}[t]{0.48\textwidth}
+\section{Summary}
+
+Research scientist with a Ph.D. in Physics and a robust background in applying
+machine-learning concepts to complex datasets in astrophysics. Extensive work
+utilizing Python, C/C++, and more to develop software tools which have shown to
+be significant contributions to the scientific community. Experienced with the
+entire data science life cycle: identifying problems, data wrangling, and model
+deployment, evaluation, and maintenance.
+
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.48\textwidth}
 \section{Education}
+
 \resumeSubHeadingListStart
 
+  \vspace{-5pt}
+  \setlength\itemsep{2pt}
   \educationEntry
-    {Ph.D. in Physics}{3.92}{Aug. 2019 -- July 2024}
-    {University of Oklahoma; \href{https://shareok.org/handle/11244/340468}{Dissertation on SHAREOK}}{Norman, OK}
+    {Ph.D. in Physics}
+    {University of Oklahoma}{July 2024}{GPA: 3.92}
+    {\href{https://shareok.org/handle/11244/340468}{Dissertation on SHAREOK}}
   \educationEntry
-    {Professional Certificate, Data Science}{}{July 2024 -- Present (\textit{Expected Aug. 2024})}
-    {IBM}{}
+    {Professional Certificate, Machine Learning}
+    {IBM}{\textit{Ongoing}}{}
+    {}
   \educationEntry
-    {B.S. in Astrophysics}{3.91}{Aug. 2014 -- May 2017}
-    {University of Oklahoma}{Norman, OK}
+    {Professional Certificate, Data Science}
+    {IBM}{Aug. 2024}{\href{https://www.coursera.org/account/accomplishments/specialization/certificate/1CX1HP3UEHJ1}{View}}
+    {}
+  \educationEntry
+    {B.S. in Astrophysics}
+    {University of Oklahoma}{May 2017}{GPA: 3.91}
+    {}
 
 \resumeSubHeadingListEnd
+
+\end{minipage}
 
 
 \section{Technical Skills}
@@ -148,41 +185,38 @@
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
     \vspace{3pt}
     \textbf{Programming}: & \textbf{Platforms}: & \textbf{Technologies}: \\
-    Python, SQL, C/C++, C\#, Bash, & Linux/UNIX, Windows & Git Version Control, JupyterLab, RStudio, \\
-    Fortran, IDL, Makefiles, CMake & & \LaTeX, MS Office, Mathematica, IRAF \\
+    Python, SQL, C/C++, C\#, Bash & Linux/UNIX, Windows & Git, JupyterLab, RStudio, \LaTeX, Slurm \\
     \vspace{-3pt}
   \end{tabular*}
 
   \vspace{-3pt}
   \textbf{Experience with Python Libraries}:
 
-  \vspace{1pt}
-  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
-    % \vspace{3pt}
-    NumPy & SciPy & scikit-learn & Astropy & Tensorflow & pandas & matplotlib & GPy \\
-    % \vspace{-3pt}
-  \end{tabular*}
+  NumPy \hfill
+  pandas \hfill
+  scikit-learn \hfill
+  matplotlib \hfill
+  SciPy \hfill
+  Astropy \hfill
+  Tensorflow \hfill
+  GPy
 
   \vspace{6pt}
   \textbf{Data Science Skills}:
   \vspace{1pt}
 
-  Machine Learning \hfill$\circ$\hfill
-  Data Analysis \hfill$\circ$\hfill
-  Data Visualization \hfill$\circ$\hfill
-  Cluster Analysis \hfill$\circ$\hfill
-  Classification \\
-  Statistics \hfill$\circ$\hfill
-  Regression \hfill$\circ$\hfill
-  Predictive Modeling \hfill$\circ$\hfill
-  Optimization \hfill$\circ$\hfill
-  Interpolation \& Extrapolation \\
-  Numerical Computation \hfill$\circ$\hfill
-  Software Development \hfill$\circ$\hfill
-  Unit Testing \hfill$\circ$\hfill
-  Debugging \hfill$\circ$\hfill
+  Data Wrangling \hfill
+  Statistics \hfill
+  Data Analysis \hfill
+  Data Visualization \hfill
+  Model Evaluation \hfill
   Automation
 
+  Regression \hfill
+  Classification \hfill
+  Parameter Optimization \hfill
+  Cluster Analysis \hfill
+  Dimensionality Reduction
 
 \section{Research Experience}
 \resumeSubHeadingListStart
@@ -193,17 +227,19 @@
     {University of Oklahoma, Advised by Dr. Eddie Baron}{Norman, OK}
 
     \begin{itemize}\small
-      \item \emphasize{Develop Python software} to implement several
+      \item \emphasize{Develop Python software} to implement
         \emphasize{machine-learning} techniques to \emphasize{model} the
-        behavior of SNe~Ia.
-      \item Perform \emphasize{statistical analyses}, resulting in two
-        \emphasize{publications} that illustrate the effectiveness of my
-        results.
+        behavior of supernovae.
+      \item Perform thorough \emphasize{preprocessing},
+        \emphasize{standardization}, and \emphasize{feature engineering} of
+        spectroscopic data.
+      \item Conduct detailed \emphasize{statistical analyses}, resulting in two
+        \emphasize{publications} in a peer-reviewed journal (ApJ).
       \item \emphasize{Collaborate} with leading researchers from several other
         universities and facilities around the world (CSP, POISE).
       \item \emphasize{Present} results to peers and collaborators at meetings
         and conferences.
-      \item Synthesize \emphasize{models} in a \emphasize{supercomputing}
+      \item \emphasize{Synthesize models} in a \emphasize{supercomputing}
         environment with \emphasize{Slurm} scripts using \texttt{PHOENIX}
         radiative transfer code.
     \end{itemize}
@@ -216,14 +252,13 @@
             {Carnegie Supernova Project: Classification of Type Ia Supernovae}
             {\apj}
       \item \href{https://github.com/anthonyburrow/SNEx}{SNEx} (Python):
-        Spectrum \emphasize{extrapolation} into the near-infrared using
-        principal component analysis.
+        Spectrum \emphasize{extrapolation} into near-infrared wavelengths using
+        \emphasize{principal component analysis}.
       \item \href{https://github.com/anthonyburrow/spextractor}{Spextractor} (Python):
-        \emphasize{Fast spectrum-smoothing} using Gaussian processes; spectrum
-        \emphasize{preprocessing}.
+        Fast spectrum-smoothing using \emphasize{Gaussian process regression}.
       \item \href{https://github.com/anthonyburrow/SNIaDCA}{SNIaDCA} (Python):
-        Wrapper for SNe~Ia probablistic \emphasize{classification} with
-        Gaussian mixture models.
+        Wrapper for probablistically \emphasize{classifying} supernovae with
+        \emphasize{Gaussian mixture models}.
     \end{itemize}\vspace{-5pt}
 
   \normalsize
@@ -232,16 +267,16 @@
     {University of Oklahoma, Advised by Dr. John Wisniewski}{Norman, OK}
 
     \begin{itemize}\small
-      \item \emphasize{Reduce} observed data by removing multiple sources of
-        noise from raw \texttt{FITS} images of star clusters using
-        \texttt{IRAF}.
-      \item \emphasize{Model} and fit the observed light profile of stars on
-        images using \texttt{IRAF}.
-      \item Create Python and IDL scripts needed to \emphasize{analyze data}
+      \item \emphasize{Calibrated} observed data by removing multiple sources
+        of noise from raw \texttt{FITS} images of stars using \texttt{IRAF}.
+      \item \emphasize{Modeled} the observed light profile of stars on
+        images using \texttt{IRAF} to calculate their brightness values.
+      \item Created Python and IDL scripts needed to \emphasize{analyze data}
         and propagate errors derived from observations.
-      \item Conduct multiple remote \emphasize{observations} using the 0.5m
-        ARCSAT telescope at the Apache Point Observatory.
-      \item Present results at the American Astronomical Society conference.
+      \item Conducted multiple remote \emphasize{observations} at the Apache
+        Point Observatory to obtain more raw data for analysis.
+      \item \emphasize{Presented results} at the American Astronomical Society
+        conference.
     \end{itemize}
 
 \resumeSubHeadingListEnd

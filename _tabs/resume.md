@@ -4,7 +4,13 @@ icon: fas fa-file
 order: 4
 ---
 
-[Download my full resume here!](/assets/resume/burrow_resume.pdf){:target="_blank"}
+You can see my concise resume below:
+
+[Anthony Burrow Resume](/assets/resume/burrow_resume_onepage.pdf){:target="_blank"}
+
+...or for a complete summary, please see the following:
+
+[Anthony Burrow Resume (Full)](/assets/resume/burrow_resume.pdf){:target="_blank"}
 
 # Education
 ---
