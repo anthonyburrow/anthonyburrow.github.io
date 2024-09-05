@@ -91,24 +91,24 @@ are summarized below:
 
 **Random Forest**:
 
-| Merit     | DA    | non-DA |&#124;| DB    | DC    | DQ    | DZ    | DO    |
-| --------- | ----- | ------ | ---- | ----- | ----- | ----- | ----- | ----- |
-| Precision | 0.890 | 0.911  |&#124;| 0.937 | 0.747 | 0.800 | 0.759 | 0.769 |
-| Recall    | 0.808 | 0.952  |&#124;| 0.980 | 0.887 | 0.941 | 0.526 | 0.470 |
+| Merit     |&#124;| DA    | non-DA |&#124;| DB    | DC    | DQ    | DZ    | DO    |
+| --------- | ---- | ----- | ------ | ---- | ----- | ----- | ----- | ----- | ----- |
+| Precision |&#124;| 0.890 | 0.911  |&#124;| 0.937 | 0.747 | 0.800 | 0.759 | 0.769 |
+| Recall    |&#124;| 0.808 | 0.952  |&#124;| 0.980 | 0.887 | 0.941 | 0.526 | 0.470 |
 
 **Gradient-Boosting**:
 
-| Merit     | DA    | non-DA |&#124;| DB    | DC    | DQ    | DZ    | DO    |
-| --------- | ----- | ------ | ---- | ----- | ----- | ----- | ----- | ----- |
-| Precision | 0.882 | 0.921  |&#124;| 0.958 | 0.830 | 0.800 | 0.785 | 0.806 |
-| Recall    | 0.831 | 0.947  |&#124;| 0.977 | 0.899 | 0.941 | 0.654 | 0.671 |
+| Merit     |&#124;| DA    | non-DA |&#124;| DB    | DC    | DQ    | DZ    | DO    |
+| --------- | ---- | ----- | ------ | ---- | ----- | ----- | ----- | ----- | ----- |
+| Precision |&#124;| 0.882 | 0.921  |&#124;| 0.958 | 0.830 | 0.800 | 0.785 | 0.806 |
+| Recall    |&#124;| 0.831 | 0.947  |&#124;| 0.977 | 0.899 | 0.941 | 0.654 | 0.671 |
 
 **K-Nearest Neighbors**:
 
-| Merit     | DA    | non-DA |&#124;| DB    | DC    | DQ    | DZ    | DO    |
-| --------- | ----- | ------ | ---- | ----- | ----- | ----- | ----- | ----- |
-| Precision | 0.760 | 0.870  |&#124;| 0.896 | 0.691 | 1.000 | 0.735 | 0.718 |
-| Recall    | 0.724 | 0.890  |&#124;| 0.972 | 0.822 | 0.882 | 0.462 | 0.409 |
+| Merit     |&#124;| DA    | non-DA |&#124;| DB    | DC    | DQ    | DZ    | DO    |
+| --------- | ---- | ----- | ------ | ---- | ----- | ----- | ----- | ----- | ----- |
+| Precision |&#124;| 0.760 | 0.870  |&#124;| 0.896 | 0.691 | 1.000 | 0.735 | 0.718 |
+| Recall    |&#124;| 0.724 | 0.890  |&#124;| 0.972 | 0.822 | 0.882 | 0.462 | 0.409 |
 
 The model that performed best overall and most consistently, especially in
 distinguishing between non-DA WDs, was the gradient-boosting model. A visual
@@ -119,6 +119,11 @@ _Confusion matrix of gradient-boosting algorithm classifying DA and non-DA WDs._
 
 ![Desktop View](assets/img/projects/WDClassification_GB2.png)
 _Confusion matrix of gradient-boosting algorithm classifying non-DA WDs._
+
+These results are very similar and sometimes improved from those by
+[García-Zamora, et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023A%26A...679A.127G/abstract){:target="_blank"}
+who used Random Forests with a set of 110 spectral coefficients to determine
+the same classification scheme.
 
 The Random Forest method also performs similarly to the Gradient-Boosting
 method; however, it heavily struggles in classifying DZ objects. Perhaps with a
