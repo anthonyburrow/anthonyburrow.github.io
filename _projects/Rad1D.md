@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Rad1D
-description: A simple 1-D radiative transfer code that describes light passing through a medium.
+description: A simple 1-D radiative transfer code describing light passing through a medium.
 repo: Rad1D
-categories: [code, C++]
+categories: [C++, computation]
 tags: [C++]
 math: true
 ---

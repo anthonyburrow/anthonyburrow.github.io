@@ -4,7 +4,7 @@ title: SNIaDCA
 description: A Python wrapper for the cluster analysis by Burrow, et al. (2020) using Gaussian mixture models.
 repo: SNIaDCA
 pinned: True
-categories: [code, python]
+categories: [Python, data science]
 tags: [python]
 ---
 

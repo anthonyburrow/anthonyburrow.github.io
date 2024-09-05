@@ -4,7 +4,7 @@ title: SNEx
 description: Extrapolation of SNe Ia spectra into the near-infrared using principal component analysis.
 repo: SNEx
 pinned: True
-categories: [python, modeling]
+categories: [Python, data science]
 ---
 
 ## About

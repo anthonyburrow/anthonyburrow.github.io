@@ -3,7 +3,7 @@ layout: project
 title: Hydro1D
 description: A simple 1-D hydrocode describing a collapsing star.
 repo: Hydro1D
-categories: [code, C++]
+categories: [C++, computation]
 tags: [C++]
 ---
 

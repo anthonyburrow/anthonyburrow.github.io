@@ -1,9 +1,9 @@
 ---
 layout: project
 title: CFD
-description: Multiple codes that solve basic problems in computational fluid dynamics.
+description: Numerical solutions to problems in computational fluid dynamics.
 repo: ComputationalFluidDynamics
-categories: [code, Python]
+categories: [Python, computation]
 tags: [Python]
 ---
 

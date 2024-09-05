@@ -4,7 +4,7 @@ title: Spextractor
 description: Uses Gaussian process regression and other techniques to quickly smooth spectra and calculate spectroscopic properties of Type Ia supernovae.
 repo: spextractor
 pinned: True
-categories: [code, python]
+categories: [Python, data science]
 tags: [python]
 ---
 
