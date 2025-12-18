@@ -4,11 +4,7 @@ icon: fas fa-file
 order: 4
 ---
 
-You can see my concise resume below:
-
-[Anthony Burrow Resume](/assets/resume/burrow_resume_onepage.pdf){:target="_blank"}
-
-...or for a complete summary, please see the following:
+You can see my complete resume below:
 
 [Anthony Burrow Resume (Full)](/assets/resume/burrow_resume.pdf){:target="_blank"}
 
@@ -21,28 +17,60 @@ You can see my concise resume below:
 - <ins>B.S. in Astrophysics</ins>
   : University of Oklahoma, *May 2017*
 
-# Research Experience
+# Research
 ---
 
-- **<ins>Graduate Research Assistant</ins>** (July 2019 -- Present)
+- **<ins>Generative AI Trainer</ins>** (Dec. 2024 -- July 2025)
+  : *Independent Contractor*
+
+  : Apply expertise in physics, mathematics, and programming to evaluate LLM
+  responses to STEM prompts.
+
+
+- **<ins>Graduate Research Assistant</ins>** (July 2019 -- July 2024)
   : *University of Oklahoma, Advised by Dr. Eddie Baron*
 
-  : My current research focuses on a statistical treatment of observations of Type Ia supernovae (SNe Ia). As a result, I've identified correlations between many spectroscopic and photometric properties of these SNe Ia, which will aid in constraining models all around the scientific community.
+  : My PhD research focused on a statistical treatment of observations of Type
+  Ia supernovae (SNe Ia). As a result, I've identified correlations between
+  many spectroscopic and photometric properties of SNe Ia, which aid in
+  constraining models and making predictions for the scientific community.
 
   : **Publications**:
     : See [my publications]({% link _tabs/publications.md %}).
 
-  : **Code Products**:
-    : [`SNEx`]({% link _projects/SNEx.md %}) - Spectrum extrapolation into the near-infrared using PCA.
+  : **Software Products**:
+    : [`SNEx`]({% link _projects/SNEx.md %}) - Spectrum extrapolation into the
+    near-infrared using PCA.
 
-    : [`Spextractor`]({% link _projects/Spextractor.md %}) - Fast spectrum-smoothing using Gaussian processes; spectrum preprocessing; other useful features.
+    : [`Spextractor`]({% link _projects/Spextractor.md %}) - Fast
+    spectrum-smoothing using Gaussian processes; spectrum preprocessing; other
+    useful features.
 
-    : [`SNIaDCA`]({% link _projects/SNIaDCA.md %}) - Wrapper for classifying SNe Ia with Gaussian mixture models.
+    : [`SNIaDCA`]({% link _projects/SNIaDCA.md %}) - Wrapper for classifying
+    SNe Ia with Gaussian mixture models.
 
 - **<ins>Undergraduate Research Assistant</ins>** (June 2015 -- May 2017)
   : *University of Oklahoma, Advised by Dr. John Wisniewski*
 
-  : My work concentrated on the observation, reduction, and analysis of data taken of star clusters to improve our understanding of stars with variable circumstellar disks.
+  : My work concentrated on the observation, reduction, and analysis of data
+  taken of star clusters to improve our understanding of stars with variable
+  circumstellar disks.
+
+# Teaching
+---
+
+- **<ins>Lecturer</ins>** (Aug. 2025 -- Present)
+  : *University of Oklahoma*
+
+  : I currently deliver lectures and develop course materials for undergraduate
+  mathematics and astrophysics courses.
+
+- **<ins>Graduate Teaching Assistant</ins>** (Aug. 2019 -- Dec. 2021)
+  : *University of Oklahoma*
+
+  : Provided lectures, guide group discussions, and grading for undergraduate
+  students in Introductory Astronomy and Physics courses. Also led students
+  with hands-on operation of telescopes during astronomy labs.
 
 # Technical Presentation
 ---
@@ -56,11 +84,3 @@ You can see my concise resume below:
 * **American Astronomical Society Winter Conference, January 2017**: Poster presentation highlighting my undergraduate research.
 
 * **OU REU Program, Summer 2015**: Several presentations describing the results of my undergraduate research during this program.
-
-# Teaching Experience
----
-
-- **<ins>Graduate Teaching Assistant</ins>** (Aug. 2019 -- Dec. 2021)
-  : *University of Oklahoma*
-
-  : Provided lectures, guide group discussions, and grading for undergraduate students in Introductory Astronomy and Physics courses. Also led students with hands-on operation of telescopes during astronomy labs.
