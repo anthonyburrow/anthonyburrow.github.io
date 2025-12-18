@@ -24,3 +24,10 @@ package-lock.json
 # Misc
 _sass/dist
 assets/js/dist
+assets/resume/references.txt
+assets/resume/*.bbl
+assets/resume/tailored
+assets/resume/generic
+assets/resume/old_formats
+assets/cover_letters
+

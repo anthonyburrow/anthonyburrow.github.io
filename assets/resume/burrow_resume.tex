@@ -10,7 +10,7 @@
 \usepackage{xifthen}
 % \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{natbib}
@@ -32,6 +32,8 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
+% Ensure footers reserve space to avoid fancyhdr warning
+\setlength{\footskip}{6pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -73,7 +75,7 @@
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -95,6 +97,19 @@
   \ifthenelse{\isempty{#5}}{}{, doi: \href{https://doi.org/#5}{#5}}
 }
 
+\newcommand{\paperEntryShort}[4]{
+  \href{https://doi.org/#1}{\textbf{Burrow, Anthony}, et al. (#2)}.
+  \textit{#3}. #4
+}
+
+% \newcommand{\educationEntry}[5]{
+%   \vspace{-1pt}\item
+%     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+%       \textbf{#1}\ifthenelse{\isempty{#2}}{}{; GPA: #2}  & #3 \\
+%       \textit{\small#4} & \textit{\small #5} \\
+%     \end{tabular*}\vspace{-5pt}
+% }
+
 \newcommand{\educationEntry}[5]{
   \vspace{-1pt}
   \item
@@ -109,6 +124,12 @@
 % \newcommand{\emphasize}[1]{\textbf{#1}}
 \newcommand{\emphasize}[1]{#1}
 
+\newcommand{\technology}[2]{
+  \small
+  \textbf{#1}: #2
+  \vspace{3pt}
+}
+
 % -------------------------------------------
 
 \begin{document}
@@ -119,46 +140,48 @@
 % Header
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
   \multirow{3}{*}{\textbf{\huge Anthony Burrow, Ph.D.}}
-  & \faEnvelope \enspace anthony.r.burrow@gmail.com \\
-  & \faLinkedin \enspace \href{https://www.linkedin.com/in/anthony-burrow}{linkedin.com/in/anthony-burrow} \\
-  & \faHome \enspace \href{https://anthonyburrow.github.io}{anthonyburrow.github.io} \\
+  & \faIcon{envelope} \enspace anthony.r.burrow@gmail.com \\
+  & \faIcon{linkedin} \enspace \href{https://www.linkedin.com/in/anthony-burrow}{linkedin.com/in/anthony-burrow} \\
+  & \faIcon{home} \enspace \href{https://anthonyburrow.github.io}{anthonyburrow.github.io} \\
   % & \faGithub \enspace \href{http://www.github.com/anthonyburrow}{github.com/anthonyburrow} \\
 \end{tabular*}
 
 
-\vspace{10pt}
-\begin{minipage}[t]{0.48\textwidth}
-\section{Summary}
+\vspace{4pt}
 
-Research scientist with a Ph.D. in Physics and a robust background in applying
-machine-learning concepts to complex datasets in astrophysics. Extensive work
-utilizing Python, C/C++, and more to develop software tools which have shown to
-be significant contributions to the scientific community. Experienced with the
-entire data science life cycle: identifying problems, data wrangling, and model
-deployment, evaluation, and maintenance.
 
-\end{minipage}%
-\hspace{0.04\textwidth}%
+%
+% Objective
+%
+
+
+\section{Objective}
+
+Data scientist with a Ph.D. in Physics and experience leveraging machine
+learning to model complex data sets in astrophysics. Seeking to apply my
+advanced skill set in model production, data visualization, and software
+development in Python and C++ to deliver insightful data-driven solutions to
+business goals.
+
+\vspace{5pt}
+
+
+%
+% Education | Certifications
+%
+
+
 \begin{minipage}[t]{0.48\textwidth}
 \section{Education}
 
 \resumeSubHeadingListStart
 
-  \vspace{-5pt}
+  % \vspace{-8pt}
   \setlength\itemsep{2pt}
   \educationEntry
     {Ph.D. in Physics}
-    {University of Oklahoma}{July 2024}{GPA: 3.92}
-    {\href{https://shareok.org/handle/11244/340468}{Dissertation on SHAREOK}}
-
-  \vspace{-1pt}
-  \item
-      \textbf{IBM Professional Certificate}
-      \begin{itemize}[leftmargin=*, topsep=-2pt]
-        \item Machine Learning, \textit{Ongoing}
-        \item Data Science, \textit{Aug. 2024} (\href{https://www.coursera.org/account/accomplishments/specialization/certificate/1CX1HP3UEHJ1}{View})
-      \end{itemize}
-  \vspace{2pt}
+    {University of Oklahoma}{July 2024}{GPA: 3.92; \href{https://www.parchment.com/u/award/5ebe324637723257bda3659f8c5bb35c}{Verification}}
+    {\href{https://shareok.org/handle/11244/340468}{View Dissertation}}
 
   \educationEntry
     {B.S. in Astrophysics}
@@ -167,198 +190,216 @@ deployment, evaluation, and maintenance.
 
 \resumeSubHeadingListEnd
 
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.48\textwidth}
+\section{Certifications}
+
+\resumeSubHeadingListStart
+
+  \item
+      \textbf{IBM Professional Certificate}
+      \begin{itemize}[leftmargin=*, topsep=-2pt]
+        \item Data Science, Aug. 2024 (\href{https://www.coursera.org/account/accomplishments/specialization/certificate/1CX1HP3UEHJ1}{View})
+        \item[] Enhancing skills in the data science lifecycle --- ETL, data
+          analysis, data visualization, SQL, machine learning, etc. --- to
+          derive insights from data.
+        % \item DevOps and Software Engineering, \textit{Ongoing}
+      \end{itemize}
+
+\resumeSubHeadingListEnd
+
 \end{minipage}
+
+\vspace{-3pt}
+
+
+%
+% Relevant Experience
+%
+
+
+\section{Relevant Experience}
+\resumeSubHeadingListStart
+  \setlength\itemsep{2pt}
+
+  \normalsize
+  \resumeSubheading
+    {Generative AI Trainer}{Dec. 2024 -- Present}
+    {Independent Contractor}{}
+
+    \begin{itemize}
+      \small
+      \setlength\itemsep{0pt}
+      \item Serve as an expert in physics, mathematics, and programming to
+        train and evaluate responses from large language models (LLMs) to
+        STEM-based prompts.
+      \item Assess the validity of evaluations from other AI trainers to
+        maintain quality assurance in model training data.
+    \end{itemize}
+  \vspace{-5pt}
+
+  \normalsize
+  \resumeSubheading
+    {Research Assistant (Data Science)}{July 2019 -- July 2024}
+    {University of Oklahoma}{Norman, OK}
+
+    \begin{itemize}
+      \small
+      \setlength\itemsep{0pt}
+      \item Employed machine learning algorithms to establish a new, optimized
+        standard of classifying astronomical objects.
+      \item Designed an innovative method of extrapolating and predicting
+        astronomical data by leveraging dimensionality reduction techniques,
+        with extrapolated results matching observed data within 2--5\%.
+      \item Led collaborative statistical analyses with leading researchers
+        from around the world, resulting in two published reports to a
+        peer-reviewed journal that interpret findings using data visualizations
+        and highly technical writing.
+      \item Developed and maintained open-source software to enhance
+        accessibility of models for the scientific community.
+      \item Utilize hybrid cloud computing infrastructure to synthesize physics
+        models for comparative data analysis.
+    \end{itemize}
+    \vspace{-7pt}
+    \hspace*{1.1em}\smallHeading{Products}
+    \begin{itemize}
+      \small
+      \setlength\itemsep{0pt}
+      \item \href{https://anthonyburrow.github.io/projects/WDClassification}{White Dwarf Classifier}:
+        Developed several ML models (e.g., random forest, gradient boosting,
+        SVM) to classify several groups of objects within over 90\% accuracy,
+        achieving results that improve upon previously published work.
+      \item \href{https://anthonyburrow.github.io/projects/SNEx}{SNEx} (Python):
+        Spectrum extrapolation into near-infrared wavelengths using
+        principal component analysis.
+      \item \href{https://anthonyburrow.github.io/projects/Spextractor}{Spextractor} (Python):
+        Fast spectrum-smoothing by implementing interpolation via Gaussian
+        process regression.
+      \item See Publications section (next page).
+      % \item \href{https://anthonyburrow.github.io/projects/SNIaDCA}{SNIaDCA} (Python):
+      %   Wrapper for probablistically classifying supernovae with
+      %   Gaussian mixture models.
+    \end{itemize}
+  \vspace{-5pt}
+
+  \normalsize
+  \resumeSubheading
+    {Undergraduate Research Assistant (Data Analysis)}{June 2015 -- May 2017}
+    {University of Oklahoma}{Norman, OK}
+
+    \begin{itemize}
+      \small
+      \setlength\itemsep{0pt}
+      \item Created Python scripts needed for data analysis, discovering
+        several stars with time-variable properties.
+      \item Calibrated and processed raw image data by removing multiple
+        sources of noise and bias.
+      \item Conducted multiple remote observations at the Apache Point
+        Observatory to obtain more raw data for analysis.
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\vspace{-10pt}
+
+
+%
+% Technical Skills
+%
 
 
 \section{Technical Skills}
 
-  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l}
-    \vspace{3pt}
-    \textbf{Programming}: & \textbf{Platforms}: & \textbf{Technologies}: \\
-    Python, C/C++, C\#, SQL, Bash, & Linux/UNIX, Windows & Git (Version Control), \LaTeX, RStudio, \\
-    Fortran, IDL, Make/Makefiles, CMake & & Microsoft Office, Mathematica, IRAF \\
-    \vspace{-3pt}
-  \end{tabular*}
+\technology{Programming \& Scripting}
+{Python, C/C++, SQL, R, C\#, Slurm, Make, CMake, Fortran, \LaTeX}
 
-  \vspace{-3pt}
-  \textbf{Experience with Python Libraries}:
+\technology{Python Libraries}
+{NumPy, pandas, scikit-learn, Tensorflow, matplotlib, SciPy, Astropy, pytest}
 
-  NumPy \hfill
-  pandas \hfill
-  scikit-learn \hfill
-  matplotlib \hfill
-  SciPy \hfill
-  Astropy \hfill
-  Tensorflow \hfill
-  GPy
+\technology{Development Tools}
+{Docker, Power BI, JupyterLab, Visual Studio, RStudio}
 
-  \vspace{6pt}
-  \textbf{Data Science Skills}:
-  \vspace{1pt}
+\technology{Platforms}
+{Linux/UNIX (Ubuntu, Arch), Windows}
 
-  Machine Learning \hfill
-  Data Wrangling \hfill
-  Statistics \hfill
-  Data Analysis \hfill
-  Data Visualization \hfill
-  Model Evaluation
+\technology{Version Control}
+{Git, GitHub, GitHub Actions workflows, Continuous Integration \& Deployment
+(CI/CD)}
 
-  Regression \hfill
-  Classification \hfill
-  Parameter Optimization \hfill
-  Cluster Analysis \hfill
-  Dimensionality Reduction
+% \technology{Data Skills}
+% {Machine Learning, Data Wrangling, Data Analysis, Data Visualization,
+% Statistics, Model Evaluation, Regression, Classification, Cluster Analysis,
+% Feature Engineering, Parameter Optimization}
+
+% {Data Wrangling, Data Analysis,
+% Statistics, Model Evaluation, Regression, Classification, Cluster Analysis,
+% Feature Engineering, Parameter Optimization}
+
+\vspace{-3pt}
 
 
-\section{Research Experience}
+%
+% Relevant Projects
+%
+
+
+\section{Additional Software Projects}
 \resumeSubHeadingListStart
 
-  \normalsize
-  \resumeSubheading
-    {Graduate Research Assistant}{July 2019 -- Present}
-    {University of Oklahoma, Advised by Dr. Eddie Baron}{Norman, OK}
+  % \item \href{https://anthonyburrow.github.io/projects/WDClassification}{White Dwarf Classifier}:
+  %   Developed several classification models (e.g., random forest, gradient
+  %   boosting, SVM) to classify astronomical data within up to 98\%, achieving
+  %   results that improve upon previously published work.
 
-    \begin{itemize}\small
-      \item \emphasize{Develop Python software} to implement
-        \emphasize{machine-learning} techniques to \emphasize{model} the
-        behavior of supernovae.
-      \item Perform thorough \emphasize{preprocessing},
-        \emphasize{standardization}, and \emphasize{feature engineering} of
-        spectroscopic data.
-      \item Conduct detailed \emphasize{statistical analyses}, resulting in two
-        \emphasize{publications} in a peer-reviewed journal (ApJ).
-      \item \emphasize{Collaborate} with leading researchers from several other
-        universities and facilities around the world (CSP, POISE).
-      \item \emphasize{Present} results to peers and collaborators at meetings
-        and conferences.
-      \item \emphasize{Synthesize models} in a \emphasize{supercomputing}
-        environment with \emphasize{Slurm} scripts using \texttt{PHOENIX}
-        radiative transfer code.
-    \end{itemize}
-    \hspace*{1.1em}\smallHeading{Products}
-    \begin{itemize}\small
-      \item \href{https://github.com/anthonyburrow/SNEx}{SNEx} (Python):
-        Spectrum \emphasize{extrapolation} into near-infrared wavelengths using
-        \emphasize{principal component analysis}.
-      \item \href{https://github.com/anthonyburrow/spextractor}{Spextractor} (Python):
-        Fast spectrum-smoothing using \emphasize{Gaussian process regression}.
-      \item \href{https://github.com/anthonyburrow/SNIaDCA}{SNIaDCA} (Python):
-        Wrapper for probablistically \emphasize{classifying} supernovae with
-        \emphasize{Gaussian mixture models}.
-    \end{itemize}\vspace{-5pt}
+  \item \href{https://github.com/anthonyburrow/SpecFit}{SpecFit} (Python, C++):
+    Efficient spectrum-fitting of various integrated models using non-linear
+    optimization, utilizing \texttt{pybind11} to allow fast C++ functionality
+    within Python.
 
-  \normalsize
-  \resumeSubheading
-    {Undergraduate Research Assistant}{June 2015 -- May 2017}
-    {University of Oklahoma, Advised by Dr. John Wisniewski}{Norman, OK}
+  \item \href{https://anthonyburrow.github.io/projects/Rad1D}{Rad1D}:
+    Radiative transfer code that utilizes iterative matrix operations
+    to solve complex equations that explain light passing through a medium.
+    Written in C++ with a Python wrapper, implementing unit testing for
+    seamless integration.
 
-    \begin{itemize}\small
-      \item \emphasize{Calibrated} observed data by removing multiple sources
-        of noise from raw \texttt{FITS} images of stars using \texttt{IRAF}.
-      \item \emphasize{Modeled} the observed light profile of stars on
-        images using \texttt{IRAF} to calculate their brightness values.
-      \item Created Python and IDL scripts needed to \emphasize{analyze data}
-        and propagate errors derived from observations.
-      \item Conducted multiple remote \emphasize{observations} at the Apache
-        Point Observatory to obtain more raw data for analysis.
-      \item \emphasize{Presented results} at the American Astronomical Society
-        conference.
-    \end{itemize}
+  \item \href{https://anthonyburrow.github.io/projects/Hydro1D}{Hydro1D}:
+    Hydrocode that simulates the time-dependent shock dynamics of stellar
+    material (C++, Python).
 
 \resumeSubHeadingListEnd
 
 
-\section{Additional Projects}
-\resumeSubHeadingListStart
-
-  \item \href{https://github.com/anthonyburrow/Rad1D}{Rad1D}:
-    A 1D radiative transfer code written in C++ featuring a Python wrapper for
-    easy implementation into Python for analysis and plotting. This program
-    converges a solution to wavelength-dependent radiative transfer equations,
-    which describes how light behaves as it passes through a medium as a
-    function of optical depth.
-  \item \href{https://github.com/anthonyburrow/Hydro1D}{Hydro1D}:
-    A 1D hydrodynamical code written primarily in C++ with some Python
-    additions. This program models the fluid dynamics of a massive (10
-    M$_\odot$) star undergoing a collapse and a shock event, which leads to a
-    core-collapse supernova.
-
-\resumeSubHeadingListEnd
+%
+% Publications
+%
 
 
 \section{Publications}
+\resumeSubHeadingListStart
 
-  \smallHeading{First-Authored Papers}
+  \paperEntryFirstAuthor{Baron, E., Burns, Christopher R.}{2024}
+    {Extrapolation of Type Ia Supernova Spectra into the Near-Infrared Using PCA}
+    {\apj}{10.3847/1538-4357/ad3c45}
+  \paperEntryFirstAuthor{Baron, E., Ashall, C.}{2020}
+    {Carnegie Supernova Project: Classification of Type Ia Supernovae}
+    {\apj}{10.3847/1538-4357/abafa2}
 
-  \resumeItemListStart
-    % \item Burrow et al. (\textit{ApJ, in press})
-    % \item \bibentry{Burrow_etal_2020}
-    \paperEntryFirstAuthor{Baron, E., Burns, Christopher R.}{2024}
-      {Extrapolation of Type Ia Supernova Spectra into the Near-Infrared Using PCA}
-      {\apj}{10.3847/1538-4357/ad3c45}
-    \paperEntryFirstAuthor{Baron, E., Ashall, C.}{2020}
-      {Carnegie Supernova Project: Classification of Type Ia Supernovae}
-      {\apj}{10.3847/1538-4357/abafa2}
-  \resumeItemListEnd
-
-  \smallHeading{Relevant Co-Authored Papers}
-
-  \resumeItemListStart
-    % \paperEntry{Shahbandeh, Melissa}{2024}
-    %            {Unraveling cosmic dust origins: JWST revelations from legacy observations of SN 2023dbc}
-    %            {JWST Proposal. Cycle 3, ID. \#6213}{}
-    % \paperEntry{Shahbandeh, Melissa}{2024}
-    %            {Probing Early Dust Formation in the Universe via Stripped-Envelope Supernovae}
-    %            {JWST Proposal. Cycle 3, ID. \#6583}{}
-    % \paperEntry{DerKacy, James M.}{2024}
-    %            {Examining the Heart of Type Ia Supernova 2021aefx with Ultra-Late Time Spectra}
-    %            {JWST Proposal. Cycle 3, ID. \#6582}{}
-    % \paperEntry{DerKacy, James M.}{2024}
-    %            {The Full Picture: Determining the Ultra-Late Time MIR Flux Redistribution in SN 2021aefx}
-    %            {JWST Proposal. Cycle 3, ID. \#6023}{}
-    % \paperEntry{Ashall, Chris}{2024}
-    %            {Late Time Spectroscopy of Type Ia Supernovae: Determining the Explosion Mechanism and Elemental Production}
-    %            {JWST Proposal. Cycle 3, ID. \#5057}{}
-    \paperEntry{DerKacy, James M.}{2024}
-               {JWST MIRI/Medium Resolution Spectrograph (MRS) Observations and Spectral Models of the Underluminous Type Ia Supernova 2022xkq}
-               {\apj}{10.3847/1538-4357/ad0b7b}
-    \paperEntry{Shahbandeh, Melissa}{2024}
-               {JWST NIRSpec+MIRI Observations of the nearby Type IIP supernova 2022acko}
-               {arXiv e-prints}{10.48550/arXiv.2401.14474}
-    % \paperEntry{DerKacy, James M.}{2023}
-    %            {The UV Future is Now: Tapping Hubble's UV Spectral Archive to Drive Current and Future Type Ia Supernova Science}
-    %            {HST Proposal. Cycle 31, ID. \#17555}{}
-    % \paperEntry{Shahbandeh, Melissa}{2023}
-    %            {Near- and Mid-IR Observations to Probe Dust Formation in the Remarkably Nearby Stripped-Envelope Supernova 2023dbc}
-    %            {JWST Proposal. Cycle 2, ID. \#4520}{}
-    % \paperEntry{Shahbandeh, Melissa}{2023}
-    %            {Probing Early Dust Formation in the Universe via Stripped-Envelope Supernovae}
-    %            {JWST Proposal. Cycle 2, ID. \#4217}{}
-    % \paperEntry{DerKacy, James M.}{2023}
-    %            {Examining the Heart of Type Ia Supernova 2021aefx with Ultra-Late Time Spectra}
-    %            {JWST Proposal. Cycle 2, ID. \#3726}{}
-    \paperEntry{Yarbrough, Zach}{2023}
-               {Direct analysis of the broad-line SN 2019ein: connection with the core-normal SN 2011fe}
-               {\mnras}{10.1093/mnras/stad758}
-    % \paperEntry{Shahbandeh, Melissa}{2023}
-    %            {Near- and Mid-IR Observations to Probe Dust Formation in the Remarkably Nearby Stripped-Envelope Supernova 2023dbc}
-    %            {JWST Proposal. Cycle 1, ID. \#4436}{}
-    \paperEntry{DerKacy, J. M.}{2023}
-               {JWST Low-resolution MIRI Spectral Observations of SN 2021aefx: High-density Burning in a Type Ia Supernova}
-               {\apj}{10.3847/2041-8213/acb8a8}
-    % \paperEntry{Lu, J.}{2022}
-    %            {POISE Transient Classification Report for 2022-03-18}
-    %            {Transient Name Server Classification Report}{}
-    % \paperEntry{Ashall, Chris}{2021}
-    %            {MIR Spectroscopy of Type Ia Supernovae: The Key to Unlocking their Explosions and Element Production}
-    %            {JWST Proposal. Cycle 1, ID. \#2114}{}
-    \paperEntry{Burns, C.}{2021}
-               {Introducing POISE: Precision Observations of Infant Supernova Explosions}
-               {\atel}{}
-  \resumeItemListEnd
+  \item Eight co-authored publications
+    (\href{https://ui.adsabs.harvard.edu/search/filter_doctype_facet_hier_fq_doctype=NOT&filter_doctype_facet_hier_fq_doctype=*%3A*&filter_doctype_facet_hier_fq_doctype=doctype_facet_hier%3A%221%2FNon-Article%2FProposal%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&fq_doctype=(*%3A*%20NOT%20doctype_facet_hier%3A%221%2FNon-Article%2FProposal%22)&p_=0&q=((%20author%3A%22burrow%2C%20anthony%22)%20AND%20year%3A2017-2024)&sort=date%20desc%2C%20bibcode%20desc}
+          {view NASA ADS query})
+    of scientific and data analyses with collaborators.
 
 
-\section{Technical Presentations}
+\resumeSubHeadingListEnd
+
+
+%
+% Presentations
+%
+
+
+\section{Presentations}
 \resumeSubHeadingListStart
 
   \resumeItem{POISE Collaboration Meeting, August 2023}
@@ -373,33 +414,13 @@ deployment, evaluation, and maintenance.
      \cite{Burrow_etal_2020}.}
   \resumeItem{American Astronomical Society Winter Conference, January 2017}
     {Poster presentation highlighting my undergraduate research.}
-  \resumeItem{OU REU Program, Summer 2015}
-    {Several presentations describing the results of my undergraduate
-    research during this program.}
 
 \resumeSubHeadingListEnd
 
 
-\section{Teaching Experience}
-\resumeSubHeadingListStart
-
-  \resumeSubheading
-    {Graduate Teaching Assistant}{Aug. 2019 -- Dec. 2021}
-    {University of Oklahoma}{Norman, OK}
-
-    \begin{itemize}
-    \item Provide lectures and guide group discussions on topics in-class to
-      undergraduate students in Introductory Astronomy and Physics courses.
-    \item Lead students with hands-on operation of telescopes during
-      astronomy labs.
-    \item Grading and evaluation for higher-level undergraduate astronomy
-      courses, such as Galaxies \& Cosmology and Stellar Astrophysics.
-    \end{itemize}
-
-\resumeSubHeadingListEnd
-
-
-\pagebreak
+%
+% Awards
+%
 
 
 \section{Awards}
@@ -424,60 +445,40 @@ deployment, evaluation, and maintenance.
 \resumeSubHeadingListEnd
 
 
-\section{Relevant Coursework}
+%
+% Additional Work Experience
+%
+
+
+\section{Additional Work Experience}
 \resumeSubHeadingListStart
+  \setlength\itemsep{-2pt}
 
-  \resumeItem{Machine Learning}
-    {(See \href{https://github.com/anthonyburrow/MachineLearning}{repository}.)}
+  \resumeSubheading
+    {Graduate Teaching Assistant}{Aug. 2019 -- Dec. 2021}
+    {University of Oklahoma}{Norman, OK}
 
-    Discusses advanced statistical techniques and machine learning concepts such as:
-
-    \vspace{-10pt}
-    \begin{multicols}{3}
-    \begin{itemize}[nolistsep]
-        \item Regression Analysis
-        \item Gaussian Processes
-        \item Cluster Analysis
-        \item Probabilistic Classification
-        \item Kernel Density Estimation
-        \item Neural Networks
+    \begin{itemize}
+    \setlength\itemsep{0pt}
+    % \item Provided lectures and guide group discussions on topics in-class to
+    %   undergraduate students in astronomy and physics courses.
+    % \item Led students with hands-on operation of telescopes during
+    %   astronomy labs.
+    % \item Graded and evaluated students' work for higher-level undergraduate
+    %   astronomy courses.
+    \item Delivered lectures and facilitated in-class group discussions in
+     undergraduate astronomy and physics courses, focusing on foundational
+     concepts and problem-solving strategies.
+    \item Led hands-on astronomy lab sessions, instructing students in the
+     operation of telescopes.
+    \item Heavily supported an undergraduate Introduction to Research course,
+     emphasizing hands-on research practices including data analysis, coding in
+     Python, and literature review.
+    \item Graded assignments and provided individualized feedback for advanced
+     undergraduate astronomy students.
     \end{itemize}
-    \end{multicols}
-    \vspace{-12pt}
-
-  \resumeItem{Numerical Methods}
-    {(See \href{https://github.com/anthonyburrow/NumericalMethods}{repository}.)}
-
-    Discusses the most common problems that arise in computation and methods
-    to address them, such as root-solving, solving systems of equations, and
-    numerically solving ordinary and partial differential equations. This
-    course also provides an introduction to high-performance computing,
-    describing the architecture of modern supercomputing and giving practice
-    with parallelization of computation using interfaces such as MPI and
-    OpenMP.
-
-  \resumeItem{Stellar Atmospheres}{}
-
-    Largely focuses on understanding the physics of light propagating
-    through a medium by solving mathematically complex systems of equations
-    that describe radiative transfer, which are only solvable numerically in
-    application. This is a fundamental approach to understanding and modeling
-    spectra observed from astronomical objects.
-
-  \resumeItem{Core \& Advanced Physics Courses}{}
-
-    An assortment of courses that allow for the fundamental understanding of
-    physics at the post-graduate level, including Classical Mechanics,
-    Statistical Mechanics, Quantum Mechanics, and Electrodynamics, and
-    classes covering advanced topics in physics, including Quantum Mechanics
-    of Atoms and General Relativity.
 
 \resumeSubHeadingListEnd
-
-
-
-% TODO:
-% - Lunar sooners?
 
 
 \end{document}
