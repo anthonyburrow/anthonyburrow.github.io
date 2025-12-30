@@ -225,7 +225,27 @@ business goals.
 
   \normalsize
   \resumeSubheading
-    {Generative AI Trainer}{Dec. 2024 -- Present}
+    {Lecturer/Instructor}{Aug. 2025 -- Present}
+    {University of Oklahoma}{}
+
+    \begin{itemize}
+      \small
+      \setlength\itemsep{0pt}
+      \item Act as instructor of record for courses in both Physics and
+        Mathematics, adapting instruction to diverse student backgrounds and
+        academic goals.
+      \item Independently design and manage a full course, developing
+        instructional materials and assessments while integrating advanced
+        content in Python programming and data analysis.
+      \item Collaborate within a multi-instructor team to coordinate
+        curriculum, align objectives, and ensure consistency across course
+        sections.
+    \end{itemize}
+  \vspace{-5pt}
+
+  \normalsize
+  \resumeSubheading
+    {Generative AI Trainer}{Dec. 2024 -- Aug. 2025}
     {Independent Contractor}{}
 
     \begin{itemize}
@@ -261,26 +281,26 @@ business goals.
       \item Utilize hybrid cloud computing infrastructure to synthesize physics
         models for comparative data analysis.
     \end{itemize}
-    \vspace{-7pt}
-    \hspace*{1.1em}\smallHeading{Products}
-    \begin{itemize}
-      \small
-      \setlength\itemsep{0pt}
-      \item \href{https://anthonyburrow.github.io/projects/WDClassification}{White Dwarf Classifier}:
-        Developed several ML models (e.g., random forest, gradient boosting,
-        SVM) to classify several groups of objects within over 90\% accuracy,
-        achieving results that improve upon previously published work.
-      \item \href{https://anthonyburrow.github.io/projects/SNEx}{SNEx} (Python):
-        Spectrum extrapolation into near-infrared wavelengths using
-        principal component analysis.
-      \item \href{https://anthonyburrow.github.io/projects/Spextractor}{Spextractor} (Python):
-        Fast spectrum-smoothing by implementing interpolation via Gaussian
-        process regression.
-      \item See Publications section (next page).
-      % \item \href{https://anthonyburrow.github.io/projects/SNIaDCA}{SNIaDCA} (Python):
-      %   Wrapper for probablistically classifying supernovae with
-      %   Gaussian mixture models.
-    \end{itemize}
+    % \vspace{-7pt}
+    % \hspace*{1.1em}\smallHeading{Products}
+    % \begin{itemize}
+    %   \small
+    %   \setlength\itemsep{0pt}
+    %   \item \href{https://anthonyburrow.github.io/projects/WDClassification}{White Dwarf Classifier}:
+    %     Developed several ML models (e.g., random forest, gradient boosting,
+    %     SVM) to classify several groups of objects within over 90\% accuracy,
+    %     achieving results that improve upon previously published work.
+    %   \item \href{https://anthonyburrow.github.io/projects/SNEx}{SNEx} (Python):
+    %     Spectrum extrapolation into near-infrared wavelengths using
+    %     principal component analysis.
+    %   \item \href{https://anthonyburrow.github.io/projects/Spextractor}{Spextractor} (Python):
+    %     Fast spectrum-smoothing by implementing interpolation via Gaussian
+    %     process regression.
+    %   \item See Publications section (next page).
+    %   % \item \href{https://anthonyburrow.github.io/projects/SNIaDCA}{SNIaDCA} (Python):
+    %   %   Wrapper for probablistically classifying supernovae with
+    %   %   Gaussian mixture models.
+    % \end{itemize}
   \vspace{-5pt}
 
   \normalsize
@@ -312,20 +332,16 @@ business goals.
 \section{Technical Skills}
 
 \technology{Programming \& Scripting}
-{Python, C/C++, SQL, R, C\#, Slurm, Make, CMake, Fortran, \LaTeX}
+{Python, C/C++, SQL, Make/CMake, Bash, Fortran, Slurm, \LaTeX}
 
 \technology{Python Libraries}
-{NumPy, pandas, scikit-learn, Tensorflow, matplotlib, SciPy, Astropy, pytest}
-
-\technology{Development Tools}
-{Docker, Power BI, JupyterLab, Visual Studio, RStudio}
-
-\technology{Platforms}
-{Linux/UNIX (Ubuntu, Arch), Windows}
+{NumPy, pandas, scikit-learn, PyTorch, matplotlib, SciPy}
 
 \technology{Version Control}
-{Git, GitHub, GitHub Actions workflows, Continuous Integration \& Deployment
-(CI/CD)}
+{Git, CI/CD with GitHub Actions workflows}
+
+\technology{Platforms}
+{Linux/UNIX, Windows}
 
 % \technology{Data Skills}
 % {Machine Learning, Data Wrangling, Data Analysis, Data Visualization,
@@ -344,28 +360,37 @@ business goals.
 %
 
 
-\section{Additional Software Projects}
+\section{Software Products}
 \resumeSubHeadingListStart
 
   % \item \href{https://anthonyburrow.github.io/projects/WDClassification}{White Dwarf Classifier}:
-  %   Developed several classification models (e.g., random forest, gradient
-  %   boosting, SVM) to classify astronomical data within up to 98\%, achieving
-  %   results that improve upon previously published work.
+  %   Developed several ML models (e.g., random forest, gradient boosting,
+  %   SVM) to classify several groups of objects within over 90\% accuracy,
+  %   achieving results that improve upon previously published work.
 
-  \item \href{https://github.com/anthonyburrow/SpecFit}{SpecFit} (Python, C++):
+  \item \href{https://anthonyburrow.github.io/projects/SNIaSpectrumNN}{SNIaSpectrumNN} (Python):
+    Neural network models made with PyTorch for predicting observational
+    properties of astronomical objects based on their spectra.
+
+  \item \href{https://anthonyburrow.github.io/projects/SNEx}{SNEx} (Python):
+    Spectrum extrapolation into near-infrared wavelengths using principal
+    component analysis.
+
+  \item \href{https://anthonyburrow.github.io/projects/Spextractor}{Spextractor} (Python):
+    Fast spectrum-smoothing by implementing interpolation using models such as
+    Gaussian processes and splines.
+
+  \item \href{https://github.com/anthonyburrow/SpecFit}{SpecFit} (C++, Python):
     Efficient spectrum-fitting of various integrated models using non-linear
-    optimization, utilizing \texttt{pybind11} to allow fast C++ functionality
-    within Python.
+    optimization, utilizing \texttt{pybind11} to enhance performance.
 
-  \item \href{https://anthonyburrow.github.io/projects/Rad1D}{Rad1D}:
+  \item \href{https://anthonyburrow.github.io/projects/Rad1D}{Rad1D} (C++, Python):
     Radiative transfer code that utilizes iterative matrix operations
     to solve complex equations that explain light passing through a medium.
-    Written in C++ with a Python wrapper, implementing unit testing for
-    seamless integration.
 
-  \item \href{https://anthonyburrow.github.io/projects/Hydro1D}{Hydro1D}:
+  \item \href{https://anthonyburrow.github.io/projects/Hydro1D}{Hydro1D} (C++, Python):
     Hydrocode that simulates the time-dependent shock dynamics of stellar
-    material (C++, Python).
+    material.
 
 \resumeSubHeadingListEnd
 
@@ -386,9 +411,9 @@ business goals.
     {\apj}{10.3847/1538-4357/abafa2}
 
   \item Eight co-authored publications
-    (\href{https://ui.adsabs.harvard.edu/search/filter_doctype_facet_hier_fq_doctype=NOT&filter_doctype_facet_hier_fq_doctype=*%3A*&filter_doctype_facet_hier_fq_doctype=doctype_facet_hier%3A%221%2FNon-Article%2FProposal%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&fq_doctype=(*%3A*%20NOT%20doctype_facet_hier%3A%221%2FNon-Article%2FProposal%22)&p_=0&q=((%20author%3A%22burrow%2C%20anthony%22)%20AND%20year%3A2017-2024)&sort=date%20desc%2C%20bibcode%20desc}
-          {view NASA ADS query})
-    of scientific and data analyses with collaborators.
+    % (\href{https://ui.adsabs.harvard.edu/search/filter_doctype_facet_hier_fq_doctype=NOT&filter_doctype_facet_hier_fq_doctype=*%3A*&filter_doctype_facet_hier_fq_doctype=doctype_facet_hier%3A%221%2FNon-Article%2FProposal%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_doctype%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&fq_doctype=(*%3A*%20NOT%20doctype_facet_hier%3A%221%2FNon-Article%2FProposal%22)&p_=0&q=((%20author%3A%22burrow%2C%20anthony%22)%20AND%20year%3A2017-2024)&sort=date%20desc%2C%20bibcode%20desc}
+    %       {view NASA ADS query})
+    of scientific analyses with collaborators.
 
 
 \resumeSubHeadingListEnd
@@ -460,12 +485,7 @@ business goals.
 
     \begin{itemize}
     \setlength\itemsep{0pt}
-    % \item Provided lectures and guide group discussions on topics in-class to
-    %   undergraduate students in astronomy and physics courses.
-    % \item Led students with hands-on operation of telescopes during
-    %   astronomy labs.
-    % \item Graded and evaluated students' work for higher-level undergraduate
-    %   astronomy courses.
+
     \item Delivered lectures and facilitated in-class group discussions in
      undergraduate astronomy and physics courses, focusing on foundational
      concepts and problem-solving strategies.
@@ -474,8 +494,7 @@ business goals.
     \item Heavily supported an undergraduate Introduction to Research course,
      emphasizing hands-on research practices including data analysis, coding in
      Python, and literature review.
-    \item Graded assignments and provided individualized feedback for advanced
-     undergraduate astronomy students.
+
     \end{itemize}
 
 \resumeSubHeadingListEnd
